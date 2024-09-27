@@ -291,9 +291,79 @@ else:
 #   loop body;
 # }while(condition);
 
+#     Day 19
 
 
+for i in range(12):
+  if(i == 10):
+    print("Skip the iteration")
+    continue
+  print("5 X", i, "=", 5 * i)
+  
+i = 0
+while True:
+  print(i)
+  i = i + 1
+  if(i%100 == 0):
+    break
 
+#     Day 20
+
+def calculateGmean(a, b):
+  mean = (a*b)/(a+b)
+  print(mean)
+
+def isGreater(a, b):
+  if(a>b):
+    print("First number is greater")
+  else:
+    print("Second number is greater or equal")
+
+def isLesser(a, b):
+  pass
+  
+
+a = 9
+b = 8
+isGreater(a, b)
+calculateGmean(a, b)
+gmean1 = (a*b)/(a+b)
+print(gmean1)
+c = 8
+d = 74
+isGreater(c, d)
+calculateGmean(c, d)
+gmean2 = (c*d)/(c+d)
+print(gmean2)
+
+#     Day 21
+
+# def average(a, b, c=1):
+#   print("The average is ", (a + b + c) / 2)
+
+
+def average(*numbers):
+  # print(type(numbers))
+  sum = 0
+  for i in numbers:
+    sum = sum + i
+  # print("Average is: ", sum / len(numbers))
+  # return 7
+  return sum / len(numbers)
+
+
+# average(4, 6)
+# average(b=9)
+
+c = average(5, 6, 7, 1)
+print(c)
+
+
+ def name(**name):  
+  print(type(name))
+  print("Hello,", name["fname"], name["mname"], name["lname"])
+
+name(mname="Buchanan", lname="Barnes", fname="James")
 
 
 
