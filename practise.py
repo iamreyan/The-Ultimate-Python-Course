@@ -285,10 +285,11 @@ while (count > 0):
   count = count - 1
 else:
   print("I am inside else")
-
-do {
-  loop body;
-}while(condition);
+ 
+# syntax for do while loop in other language like C , C++ , Java 
+# do {
+#   loop body;
+# }while(condition);
 
 
 
