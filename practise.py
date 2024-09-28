@@ -227,22 +227,20 @@ else:
 
 #     Day 16
 
-
-x = int(input("Enter the value of x: "))
+x = 4
 # x is the variable to match
 match x:
     # if x is 0
     case 0:
         print("x is zero")
-    
-    case 4:
-        print("case is 4")
-
-    # cases with if-condition
-    case _ if x!=90:
-        print(x, "is not 90")
-    case _ if x!=80:
-        print(x, "is not 80")
+    # case with if-condition
+    case 4 if x % 2 == 0:
+        print("x % 2 == 0 and case is 4")
+    # Empty case with if-condition
+    case _ if x < 10:
+        print("x is < 10")
+    # default case(will only be matched if the above cases were not matched)
+    # so it is basically just an else:
     case _:
         print(x)
 
@@ -338,22 +336,22 @@ print(gmean2)
 
 #     Day 21
 
-# def average(a, b, c=1):
-#   print("The average is ", (a + b + c) / 2)
+def average(a, b, c=1):
+  print("The average is ", (a + b + c) / 2)
 
 
 def average(*numbers):
-  # print(type(numbers))
+  print(type(numbers))
   sum = 0
   for i in numbers:
     sum = sum + i
-  # print("Average is: ", sum / len(numbers))
-  # return 7
+  print("Average is: ", sum / len(numbers))
+  return 7
   return sum / len(numbers)
 
 
-# average(4, 6)
-# average(b=9)
+average(4, 6)
+average(b=9)
 
 c = average(5, 6, 7, 1)
 print(c)
@@ -365,8 +363,84 @@ print(c)
 
 name(mname="Buchanan", lname="Barnes", fname="James")
 
+#     Day 22
 
+marks = [3, 5, 6, "Harry", True, 6, 7 , 2, 32, 345, 23]
+print(marks)
+print(type(marks))
+print(marks[0])
+print(marks[1])
+print(marks[2])
+print(marks[3])
+print(marks[4])
+print(marks[5])
 
+print(marks[-3])                # Negative index
+print(marks[len(marks)-3])      # Positive index
+print(marks[5-3])               # Positive index
+print(marks[2])                 # Positive index
+
+if "6" in marks:
+  print("Yes")
+else:
+  print("No")
+
+Same thing applies for strings as well!
+if "Ha" in "Harry":
+  print("Yes")
+
+print(marks[0:7])
+print(marks[1:9])
+print(marks[1:9:3])
+
+lst = [i*i for i in range(10)]
+print(lst)
+lst = [i*i for i in range(10) if i%2==0]
+print(lst)
+
+#     Day 23
+
+l = [11, 45, 1, 2, 4, 6, 1, 1]
+print(l)
+l.append(7)
+l.sort(reverse=True)
+l.reverse()
+print(l.index(1))
+print(l.count(1))
+m = l.copy()
+m[0] = 0
+l.insert(1, 899)
+m = [900, 1000, 1100]
+k = l + m
+print(k)
+l.extend(m)
+print(l)
+ 
+#     Day 24
+
+tup = (1, 2, 76, 342, 32, "green", True)
+tup[0] = 90
+print(type(tup), tup)
+print(len(tup))
+print(tup[0])
+print(tup[-1])
+print(tup[2])
+print(tup[34])
+
+if  3421 in tup:
+  print("Yes 342 is present in this tuple")
+tup2 = tup[1:4]
+print(tup2)
+
+#     Day 25
+
+tuple1 = (0, 1, 2, 3, 2, 31, 1, 3, 2, 3)
+res = tuple1.count(3)
+res = tuple1.index(3)
+res = tuple1.index(311)
+res = tuple1.index(3, 4, 8)
+res = len(tuple1)
+print('Count of 3 in tuple1 is:', res)
 
 
 
