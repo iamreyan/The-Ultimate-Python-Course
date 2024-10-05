@@ -25,7 +25,7 @@ print(17*13)
 
 a = complex(8, 2)
 b = True
-c = "Harry"
+c = "Reyan"
 d = None
 print(a)
 print(b)
@@ -42,7 +42,7 @@ print(list1)
 tuple1 = (("parrot", "sparrow"), ("Lion", "Tiger"))
 print(tuple1)
 
-dict1 = {"name":"Sakshi", "age":20, "canVote":True}
+dict1 = {"name":"Reyan", "age":20, "canVote":True}
 print(dict1)
 
 
@@ -83,11 +83,11 @@ print(int(x) + int(y))
 
 #     Day 11
 
-name = "Harry"
+name = "Reyan"
 friend = "Rohan"
-anotherFriend = 'Lovish'
+anotherFriend = 'Reyan'
 apple = '''He said, 
-Hi Harry
+Hi Reyan
 hey I am good
 "I want to eat an apple'''
  
@@ -98,7 +98,7 @@ print(name[1])
 print(name[2])
 print(name[3])
 print(name[4])
-# print(name[5]) # Throws an error
+print(name[5]) # Throws an error
 print("Lets use a for loop\n")
 for character in apple:
     print(character)
@@ -119,13 +119,13 @@ print(fruit[-3:-1])
 #     Day 13
 
 # Strings are immutable
-a = "!!!Harry!! !!!!!!!!! Harry"
+a = "!!!Reyan!! !!!!!!!!! Reyan"
 print(len(a))
 print(a)
 print(a.upper())
 print(a.lower())
 print(a.rstrip("!"))
-print(a.replace("Harry", "John"))
+print(a.replace("Reyan", "Rohan"))
 print(a.split(" "))
 blogHeading = "introduction tO jS"
 print(blogHeading.capitalize())
@@ -133,7 +133,7 @@ print(blogHeading.capitalize())
 str1 = "Welcome to the Console!!!"
 print(len(str1))
 print(len(str1.center(50)))
-print(a.count("Harry"))
+print(a.count("Reyan"))
 
 str1 = "Welcome to the Console !!!"
 print(str1.endswith("!!!"))
@@ -246,10 +246,10 @@ match x:
 
 #     Day 17
 
-name = 'Abhishek'
+name = 'Reyan'
 for i in name:
   print(i)
-  if(i =="b"):
+  if(i == "b"):
     print("This is something special!")
     
 colors = ["Red", "Green", "Blue", "Yellow"]
@@ -365,7 +365,7 @@ name(mname="Buchanan", lname="Barnes", fname="James")
 
 #     Day 22
 
-marks = [3, 5, 6, "Harry", True, 6, 7 , 2, 32, 345, 23]
+marks = [3, 5, 6, "Reyan", True, 6, 7 , 2, 32, 345, 23]
 print(marks)
 print(type(marks))
 print(marks[0])
@@ -386,7 +386,7 @@ else:
   print("No")
 
 Same thing applies for strings as well!
-if "Ha" in "Harry":
+if "Ha" in "Reyan":
   print("Yes")
 
 print(marks[0:7])
@@ -446,7 +446,7 @@ print('Count of 3 in tuple1 is:', res)
 
 letter = "Hey my name is {1} and I am from {0}"
 country = "India"
-name = "Harry"
+name = "Reyan"
 
 print(letter.format(country, name))
 print(f"Hey my name is {name} and I am from {country}")
@@ -506,3 +506,97 @@ def fibonacci(n):
   else:
     return fibonacci(n - 1) + fibonacci(n - 2)
 """
+
+#     Day 31
+
+s = {2, 4, 2, 6}
+print(s)
+
+info = {"Carla", 19, False, 5.9, 19}
+print(info)
+
+reyan = set()
+print(type(reyan))
+
+for value in info:
+  print(value)
+
+#     Day 32
+
+info = {"Carla", 19, False, 5.9}
+if "Carla" in info:
+    print("Carla is present.")
+else:
+    print("Carla is absent.")
+
+#     Day 33
+
+info = {'name':'Karan', 'age':19, 'eligible':True}
+
+print(info.keys())
+print(info.values())
+
+for key in info.keys():
+  print(f"The value corresponding to the key {key} is {info[key]}")print(info) 
+
+
+print(info.items())
+for key, value in info.items():
+  print(f"The value corresponding to the key {key} is {value}") 
+  
+#     Day 34
+
+ep1 = {122: 45, 123: 89, 567: 69, 670: 69}
+ep2 = {222: 67, 566: 90}
+
+# ep1.update(ep2)
+# ep1.clear()
+# ep1.pop(122)
+ep1.popitem()
+del ep1[122]
+print(ep1) 
+
+#     Day 35
+
+i = 0
+while i<7:
+  print(i)
+  i = i + 1
+  if i == 4:
+    break
+
+else:
+  print("Sorry no i")
+
+for x in range(5):
+    print ("iteration no {} in for loop".format(x+1))
+else:
+    print ("else block in loop")
+print ("Out of loop")
+
+#     Day 36
+
+a = input("Enter the number: ")
+print(f"Multiplication table of {a} is: ")
+try:
+  for i in range(1, 11):
+    print(f"{int(a)} X {i} = {int(a)*i}")
+except:
+  print("Invalid  Input!")
+
+print("Some imp lines of code")
+print("End of program")
+
+try:
+    num = int(input("Enter an integer: "))
+    a = [6, 3]
+    print(a[num])
+except ValueError:
+    print("Number entered is not an integer.")
+    
+except IndexError:
+  print("Index Error")
+
+#     Day 37
+
+
