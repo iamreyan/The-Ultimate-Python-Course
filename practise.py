@@ -599,4 +599,193 @@ except IndexError:
 
 #     Day 37
 
+def func1():
+  try:
+    l = [1, 5, 6, 7]
+    i = int(input("Enter the index: "))
+    print(l[i])
+    return 1
+  except:
+    print("Some error occurred")
+    return 0
+
+  finally:
+    print("I am always executed")
+  # print("I am always executed")
+
+
+x = func1()
+print(x)
+
+#     Day 38
+
+a = int(input("Enter any value between 5 and 9"))
+
+if(a<5  or a>9):
+  raise  ValueError("Value should be between 5 and 9")
+ 
+
+#     Day 41
+
+a = 330000
+b = 3303
+print("A") if a > b else print("=") if a == b else print("B")
+
+c = 9 if a>b else 0
+print(c)
+
+#     Day 42
+
+marks = [12, 56, 32, 98, 12,  45, 1, 4]
+
+# index = 0
+# for mark in marks:
+#   print(mark)
+#   if(index == 3):
+#     print("Harry, awesome!")
+#   index +=1
+
+for index, mark in enumerate(marks, start=1):
+  print(mark)
+  if(index == 3):
+    print("Harry, awesome!")
+
+#     Day 43
+
+
+
+#     Day 44
+
+# from math import sqrt, pi
+# from math import pi, sqrt as s
+# import math as math_builtin_python
+
+# result = math_builtin_python.sqrt(9) * math_builtin_python.pi
+# print(result)  # Output: 3.0
+
+# from harry import welcome, harry
+import harry as hr
+import math
+
+print(dir(math))
+print(math.nan, type(math.nan))
+hr.welcome()
+print(hr.harry)
+
+
+def welcome():
+  print("Hey you are welcome my friend")
+
+
+harry = "A good boy"
+
+#     Day 45
+
+import harry
+
+harry.welcome()
+
+def welcome():
+  print("Hey you are welcome from harry")
+
+# print(__name__)
+
+if __name__ == "__main__":
+  welcome()
+
+#     Day 46
+
+import os
+
+if(not os.path.exists("data")):
+    os.mkdir("data")
+
+for i in range(0, 100):
+    os.mkdir(f"data/Day{i+1}")
+
+import os 
+folders = os.listdir("data")
+
+print(os.getcwd())
+os.chdir("/Users")
+print(os.getcwd())
+
+for folder in folders:
+    print(folder)
+    print(os.listdir(f"data/{folder}"))
+
+import os
+ 
+
+for i in range(0, 100):
+    os.rename(f"data/Tutorial{i+1}", f"data/Tutorial {i+1}")
+    
+
+#     Day 48
+
+x = 10  # global variable
+
+
+def my_function():
+  global x
+  x = 5  # this will change the value of the global variable x
+  y = 5  # local variable
+
+
+my_function()
+print(x)  # prints 5
+# print(y) # this will cause an error because y is a local variable and is not accessible outside of the function
+
+#     Day 49
+
+# READING A FILE
+
+# f = open('myfile.txt', 'r')
+# # print(f)
+# text = f.read()
+# print(text)
+# f.close()
+
+# WRITING A FILE
+
+f = open('myfile.txt', 'a')
+f.write('Hello, world!')
+f.close()
+
+with open('myfile.txt', 'a') as f:
+  f.write("Hey I am inside with")
+
+#     Day 50
+
+# f = open('myfile.txt', 'r')
+# i = 0
+# while True:
+#   i = i + 1
+#   line = f.readline()
+#   if not line:
+#     break
+#   m1 = int(line.split(",")[0])
+#   m2 = int(line.split(",")[1])
+#   m3 = int(line.split(",")[2])
+#   print(f"Marks of student {i} in Maths is: {m1*2}")
+#   print(f"Marks of student {i} in English is: {m2*2}")
+#   print(f"Marks of student {i} in SST is: {m3*2}")
+
+#   print(line)
+
+f = open('myfile2.txt', 'w')
+lines = ['line 1\n', 'line 2\n', 'line 3\n']
+f.writelines(lines)
+f.close()
+
+#     Day 51
+
+with open('sample.txt', 'w') as f:
+  f.write('Hello World3!')
+  f.truncate(3)
+
+with open('sample.txt', 'r') as f:
+  print(f.read())
+
+
 
