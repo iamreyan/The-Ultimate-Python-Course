@@ -787,5 +787,232 @@ with open('sample.txt', 'w') as f:
 with open('sample.txt', 'r') as f:
   print(f.read())
 
+#     Day 52
+
+# def double(x):
+#   return x*2
+
+def appl(fx, value):
+  return 6 + fx(value)
+
+double = lambda x: x * 2
+cube = lambda x: x * x * x
+avg = lambda x, y, z: (x + y + z) / 3
+
+print(double(5))
+print(cube(5))
+print(avg(3, 5, 10))
+print(appl(lambda x: x * x , 2))
+
+#     Day 53
+
+# # MAP 
+def cube(x):
+  return x * x * x
+
+
+print(cube(2))
+
+l = [1, 2, 4, 6, 4, 3]
+newl = []
+for item in l:
+  newl.append(cube(item))
+
+newl = list(map(lambda x: x*x*x, l))
+print(newl)
+
+# # FILTER
+def filter_function(a):
+  return a>2
+  
+newnewl = list(filter(filter_function, l))
+print(newnewl)
+
+from functools import reduce
+
+# List of numbers
+numbers = [1, 2, 3, 4, 5] 
+
+# Calculate the sum of the numbers using the reduce function
+def mysum(x, y):
+  return x + y
+  
+sum = reduce(mysum, numbers)
+
+# Print the sum
+print(sum)
+
+#     Day 54
+
+a = None
+b = None
+
+print(a is b) # exact location of object in memory
+print(a is None) # exact location of object in memory
+print(a == b) # value
+
+#     Day 56
+
+def hello():
+  print("hello")
+
+hello()
+sales1 = 6000
+profit1 = 2000
+ad1 = 1000
+# rajeev.sales
+
+sales2 = 6000
+profit2 = 2000
+ad2 = 1000 
+# vikrant.sales
+
+sales3 = 6000
+profit3 = 2000
+ad3 = 1000
+ 
+# RailwayForm   ---> Class [blueprint]
+# harry --> harry ki info wala form --> Object [entity]
+# tom --> tom ki info wala form --> Object [entity]
+# shubham -- shubham ki info wala form --> Object [entity]
+# shubham.changeName("Shubhi")
+
+#     Day 57
+
+class Person:
+  name = "Harry"
+  occupation = "Software Developer"
+  networth = 10
+  def info(self):
+    print(f"{self.name} is a {self.occupation}")
+
+
+a = Person()
+b = Person()
+c = Person()
+
+a.name = "Shubham"
+a.occupation = "Accountant"
+
+b.name = "Nitika"
+b.occupation = "HR"
+
+# print(a.name, a.occupation)
+a.info()
+b.info()
+c.info()
+
+#     Day 58
+
+class Person:
+
+  def __init__(self, name, occ):
+    print("Hey I am a person")
+    self.name = name
+    self.occ = occ
+
+  def info(self):
+    print(f"{self.name} is a {self.occ}")
+
+
+a = Person("Harry", "Developer")
+b = Person("Divya", "HR") 
+a.info()
+b.info()
+print(a.name)
+a.name = "Divya"
+a.occ = "HR"
+a.info()
+
+#     Day 59
+
+
+def greet(fx):
+  def mfx(*args, **kwargs):
+    print("Good Morning")
+    fx(*args, **kwargs)
+    print("Thanks for using this function")
+  return mfx
+
+@greet
+def hello():
+  print("Hello world")
+
+@greet
+def add(a, b):
+  print(a+b)
+  
+# greet(hello)()
+hello()
+# greet(add)(1, 2)
+add(1, 2)
+
+#     Day 60
+
+class MyClass:
+  def __init__(self, value):
+      self._value = value
+    
+  def show(self):
+    print(f"Value is {self._value}")
+    
+  @property
+  def ten_value(self):
+      return 10* self._value
+    
+  @ten_value.setter
+  def ten_value(self, new_value):
+      self._value = new_value/10
+
+obj = MyClass(10)
+obj.ten_value = 67
+print(obj.ten_value)
+obj.show()
+
+#     Day 61
+
+class Employee:
+  def __init__(self, name, id):
+    self.name = name
+    self.id = id 
+
+  def showDetails(self):
+    print(f"The name of Employee: {self.id} is {self.name}")
+
+class Programmer(Employee):
+  def showLanguage(self):
+    print("The default langauge is Python")
+
+
+e1 = Employee("Rohan Das", 400)
+e1.showDetails()
+e2 = Programmer("Harry", 4100)
+e2.showDetails()
+e2.showLanguage()
+
+#     Day 62
+
+class Student:
+    def __init__(self):
+        self._name = "Harry"
+
+    def _funName(self):      # protected method
+        return "CodeWithHarry"
+
+class Subject(Student):       #inherited class
+    pass
+
+obj = Student()
+obj1 = Subject()
+print(dir(obj))
+
+# calling by object of Student class
+print(obj._name)      
+print(obj._funName())     
+# calling by object of Subject class
+print(obj1._name)    
+print(obj1._funName())
+
+#     Day 65
 
 
