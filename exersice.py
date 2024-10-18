@@ -64,16 +64,3 @@ for i in range(0, len(questoin)):
         break 
 
 print("Your take home money is {money}")
-
-
-  nwords = []
-  for word in words:
-    if(len(word)>=3): 
-      stnew = word[3:-3]
-      stnew = stnew[-1] + stnew[:-1]
-      nwords.append(stnew)
-    else:
-      nwords.append(word[::-1])
-  print(" ".join(nwords))
-  
-
